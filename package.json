@@ -1,6 +1,10 @@
 {
   "name": "retro-icons",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "Free hand-drawn retro SVG icons (522), doodle characters, animals & caricatures (259) — click to copy, download SVG/PNG. Next.js + Tailwind.",
+  "keywords": ["svg-icons", "retro", "doodle", "illustrations", "characters", "caricatures", "nextjs", "tailwind"],
+  "author": { "name": "Vetri Suriya", "url": "https://vetrisuriya.in/" },
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",

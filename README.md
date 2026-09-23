@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✳ Retro.Icons — Free Retro SVG Icons, Doodle Characters & Caricatures
 
-## Getting Started
+A hand-drawn, thick-ink **retro SVG library** in a warm print-doodle style. **522 icons** across 20 collections, plus **259 doodle characters** — humans, animals and big-head caricatures. Open the site, search, and **click any card to copy clean SVG instantly**, or download SVG / JSX / PNG. Free for personal and commercial use.
 
-First, run the development server:
+## What's inside
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 522 icons · 20 collections
+
+| Collection | Icons | What you'll find |
+|---|---|---|
+| Websites | 26 | Globe, layouts, browser, cursor, code, rocket, wireframe, pricing… |
+| Blog | 22 | Pen nib, typewriter, bookmark, open book, hashtag, paywall… |
+| News Media | 22 | Newspaper, mic, drone, clapperboard, E-paper, press mics… |
+| Hospitals | 22 | Cross, ambulance, DNA, lungs, surgeon cap, donor drop… |
+| Clinic | 22 | Stethoscope, pills, brain, Rx pad, eye chart, vaccine card… |
+| Banks | 22 | Vault, ATM, gold bars, cheques, mortgage, passbook… |
+| LMS & Education | 22 | Grad cap, diploma, microscope, live class, report card… |
+| AI | 26 | Bot, chip, sparkles, prompt bulb, diffusion grid, smart glasses… |
+| Web3 | 30 | Cube, gem NFT, seed phrase, staking lock, meme coin… |
+| E-commerce | 30 | Cart, storefront, cash register, flash sale, crown member… |
+| Travel | 28 | Paper plane, passport, auto rickshaw, houseboat, visa stamp… |
+| Social | 24 | Chat, heart, QR code, story ring, verified seal… |
+| Arrows & UI | 26 | Directionals, refresh, undo, login/logout, drag grip… |
+| Food & Drink | 36 | Burger, samosa, biryani handi, jalebi, davara coffee, thali… |
+| Sports & Fun | 30 | Soccer, cricket bat, carrom board, kabaddi court, medals… |
+| Music & Party | 32 | Guitar, dhol, bansuri, sitar, gramophone, DJ mixer… |
+| Nature & Pets | 30 | Paw, lotus, marigold garland, volcano, firefly jar… |
+| Home & Living | 26 | Sofa, diya lamp, kolam dots, jhula swing, prayer bell… |
+| Fashion & Style | 24 | Saree, kurta, mojari, jhumka, sneakers, umbrella… |
+| Tools & Build | 22 | Hammer, drill, paint roller, hard hat, wheelbarrow… |
+
+Every icon is a clean **24×24 stroke SVG** (2px, round caps) that inherits `currentColor` — recolor with a single CSS rule.
+
+### 259 characters · 3 groups
+
+| Group | Count | Highlights |
+|---|---|---|
+| Humans | 134 | Doctors, judges, engineers, athletes, chaiwala, auto driver, postman… |
+| Festivals & culture | (in Humans) | Diwali Girl, Santa, Durga, Flute Krishna, Bhangra Boy, Garba Girl, Kathakali… |
+| Animals | 71 | Lion, tiger, elephant, peacock, cobra, buffalo, penguin, crab… |
+| Caricatures | 54 | Cricket captain, kabaddi star, wizard kid, pirate queen, robot, alien, king… |
+
+Characters are **120×120 doodle scenes** — made for hero sections, onboarding flows, empty states, blogs and pitch decks. Each exports as SVG or PNG on swappable backgrounds.
+
+## How to use the site
+
+- **Home (`/`)** — the tour: hero, every collection, featured icons & characters, FAQ.
+- **Icons (`/icons`)** — the full icon wall. Search by name or tag, filter by collection pills (the URL updates too, so `/icons?c=bank` is shareable), tune stroke weight live, hit shuffle for a surprise.
+- **Characters (`/characters`)** — same experience for doodles, grouped into Humans / Animals / Caricatures (`/characters?g=animals`).
+- **Any card** — click to copy the SVG. Open it for the full preview: copy JSX, download SVG / framed retro badge / PNG, or grab a whole collection as a ready-to-`<use>` SVG sprite.
+
+## Project map
+
+```
+app/            # Pages: landing (/), icon wall (/icons), characters (/characters)
+components/     # Explorers (search + grid + preview), header/hero/footer, shadcn-style ui/
+lib/
+  icons*.ts       # All 522 icons as data (slug, name, collection, tags, svg body)
+  doodle.ts       # Doodle engine — builds humans/chibi from parts (hair, faces, poses, 80+ props)
+  characters*.ts  # All 259 artworks as data
+  collections.ts  # The 20 collections (names, taglines, accent colors)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+New artwork is just data: one line per icon, or one `person({ … })` / `chibi({ … })` call per character — the engine draws the rest in the same signature style.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Built with
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js 16 (App Router) · React 19 · Tailwind CSS v4 · TypeScript · Lucide icons. No art dependencies — every SVG is local data.
 
-## Learn More
+## License & credit
 
-To learn more about Next.js, take a look at the following resources:
+MIT — free for personal and commercial use, no attribution required (a link back is appreciated).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with love by [vetrisuriya.in](https://vetrisuriya.in/) — thick ink, warm paper, zero boring icons.
