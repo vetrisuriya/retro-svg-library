@@ -49,20 +49,6 @@ Characters are **120×120 doodle scenes** — made for hero sections, onboarding
 - **Characters (`/characters`)** — same experience for doodles, grouped into Humans / Animals / Caricatures (`/characters?g=animals`).
 - **Any card** — click to copy the SVG. Open it for the full preview: copy JSX, download SVG / framed retro badge / PNG, or grab a whole collection as a ready-to-`<use>` SVG sprite.
 
-## Project map
-
-```
-app/            # Pages: landing (/), icon wall (/icons), characters (/characters)
-components/     # Explorers (search + grid + preview), header/hero/footer, shadcn-style ui/
-lib/
-  icons*.ts       # All 522 icons as data (slug, name, collection, tags, svg body)
-  doodle.ts       # Doodle engine — builds humans/chibi from parts (hair, faces, poses, 80+ props)
-  characters*.ts  # All 259 artworks as data
-  collections.ts  # The 20 collections (names, taglines, accent colors)
-```
-
-New artwork is just data: one line per icon, or one `person({ … })` / `chibi({ … })` call per character — the engine draws the rest in the same signature style.
-
 ## Built with
 
 Next.js 16 (App Router) · React 19 · Tailwind CSS v4 · TypeScript · Lucide icons. No art dependencies — every SVG is local data.
