@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo Black", "Space Grotesk", sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --color-paper: #fffdf5;
+  --color-cream: #fbf3df;
+  --color-ink: #1a1a1a;
+  --color-retro-yellow: #ffd23f;
+  --color-retro-orange: #ff8a5c;
+  --color-retro-blue: #7bdff2;
+  --color-retro-green: #b8f169;
+  --color-retro-pink: #ffb3c7;
+}
+
+:root {
+  --background: #fffdf5;
+  --foreground: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  background-image: radial-gradient(#1a1a1a14 1px, transparent 1px);
+  background-size: 22px 22px;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Component-layer so explicit Tailwind utilities (e.g. bg-[#1A1A1A])
+   always win over these defaults when combined on one element. */
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .retro-card {
+    background: #fffdf5;
+    border: 2.5px solid #1a1a1a;
+    box-shadow: 5px 5px 0 #1a1a1a;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .retro-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #1a1a1a;
+  }
+  .retro-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #1a1a1a;
+  }
+
+  .retro-btn {
+    border: 2.5px solid #1a1a1a;
+    box-shadow: 4px 4px 0 #1a1a1a;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .retro-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #1a1a1a;
+  }
+  .retro-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #1a1a1a;
+  }
+
+  .halftone {
+    background-image: radial-gradient(#1a1a1a22 1.2px, transparent 1.2px);
+    background-size: 10px 10px;
+  }
+
+  .marquee-track {
+    animation: marquee 28s linear infinite;
+  }
+
+  .wobble:hover {
+    animation: wobble 0.4s ease-in-out;
+  }
+
+  .paper-edge {
+    border: 2.5px solid #1a1a1a;
+    border-radius: 18px;
+  }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-2deg) scale(1.04); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+::selection {
+  background: #ffd23f;
+  color: #1a1a1a;
+}
+
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #fbf3df; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 8px; border: 2px solid #fbf3df; }

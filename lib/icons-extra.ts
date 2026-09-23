@@ -1,0 +1,257 @@
+import type { CollectionSlug } from "./collections";
+import type { RetroIcon } from "./icons";
+
+/* 200+ extra icons — 3 brand-new collections (Home, Fashion, Tools)
+   plus deep uneven expansions. Every body is a unique 24x24 stroke doodle. */
+
+const R = (collection: CollectionSlug, name: string, tags: string[], body: string): RetroIcon => ({
+  slug: `${collection}-${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+  name,
+  collection,
+  tags,
+  body,
+});
+
+export const EXTRA_ICONS: RetroIcon[] = [
+  // ── HOME & LIVING (26, new) ───────────────────────
+  R("home", "House", ["home", "realty"], `<path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/>`),
+  R("home", "Sofa", ["couch", "living"], `<rect x="3" y="10" width="18" height="7" rx="2"/><path d="M5 10V7h14v3"/><path d="M6 17v3M18 17v3"/>`),
+  R("home", "Table Lamp", ["light", "decor"], `<path d="M9 3h6l2 7H7l2-7Z"/><path d="M12 10v8"/><path d="M8 20.5h8"/>`),
+  R("home", "Armchair", ["seat", "cozy"], `<path d="M8 3h8v9H8z"/><path d="M8 9H5v8h3M16 9h3v8h-3"/><path d="M8 17h8"/>`),
+  R("home", "Dining Table", ["dinner", "furniture"], `<ellipse cx="12" cy="7" rx="8" ry="2.5"/><path d="M12 9.5V19"/><path d="M8 20.5h8"/>`),
+  R("home", "Chef Knife", ["kitchen", "cook"], `<path d="M4 16l10-10 2 2-8 10H4v-2Z"/><path d="M14 6l6-2-1 3-5 1"/>`),
+  R("home", "Washer", ["laundry", "machine"], `<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="1.5"/><path d="M9 6h6"/>`),
+  R("home", "Fridge", ["kitchen", "cool"], `<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M7 10h10"/><path d="M9.5 5.5v2M9.5 12.5v3"/>`),
+  R("home", "Television", ["tv", "watch"], `<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M9 21h6M12 18v3"/><path d="M8 6L5 3M16 6l3-3"/>`),
+  R("home", "Ceiling Fan", ["cool", "breeze"], `<circle cx="12" cy="5" r="1.5"/><path d="M12 6.5V9"/><ellipse cx="6" cy="14" rx="5" ry="2.5" transform="rotate(-20 6 14)"/><ellipse cx="18" cy="14" rx="5" ry="2.5" transform="rotate(20 18 14)"/>`),
+  R("home", "Candle", ["light", "cozy"], `<path d="M10 10h4v8h-4z"/><path d="M12 10V7"/><path d="M12 3.2c-1.6 1.6-1.6 3.2 0 4.3 1.6-1.1 1.6-2.7 0-4.3Z" fill="currentColor" stroke="none"/><path d="M7 20.5h10"/>`),
+  R("home", "Pillow", ["sleep", "soft"], `<rect x="4" y="8" width="16" height="9" rx="4"/><path d="M4 8l-1.5-2M20 8l1.5-2M4 17l-1.5 2M20 17l1.5 2"/>`),
+  R("home", "Front Door", ["enter", "house"], `<rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 12h6v6H9z"/><circle cx="14.5" cy="11" r="1" fill="currentColor" stroke="none"/>`),
+  R("home", "Mop", ["clean", "wash"], `<path d="M13 3l7 7"/><path d="M11 9l-4 8 8-1 3-5-7-2Z"/><path d="M8 16l-3 4"/>`),
+  R("home", "Window", ["view", "frame"], `<rect x="5" y="4" width="14" height="16" rx="1"/><path d="M12 4v16M5 12h14"/>`),
+  R("home", "Wall Shelf", ["books", "decor"], `<path d="M4 9h16M4 16h16"/><path d="M7 9V5h2v4M13 16v-4h2v4"/>`),
+  R("home", "Stool", ["seat", "chair"], `<ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M7 8l-2 12M17 8l2 12M9 14h6"/>`),
+  R("home", "Hammock", ["relax", "nap"], `<path d="M4 3v6M20 3v6"/><path d="M4 9q8 8 16 0"/><path d="M8 12.5h8"/>`),
+  R("home", "Doormat", ["welcome", "enter"], `<rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M7 16h10M7 18.5h6"/>`),
+  R("home", "Jhula Swing", ["swing", "porch"], `<path d="M5 3v10M19 3v10"/><path d="M5 13h14"/><path d="M6 13l-1.5 5M18 13l1.5 5"/>`),
+  R("home", "Kolam Dots", ["rangoli", "decor"], `<circle cx="8" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M4 16q8 7 16 0M6 19.5h12"/>`),
+  R("home", "Diya Lamp", ["diwali", "light"], `<path d="M4 14q8 6 16 0l-1.5 4h-13L4 14Z"/><path d="M12 8c-2 2.5-2 4.5 0 6 2-1.5 2-3.5 0-6Z" fill="#FF8A5C"/>`),
+  R("home", "Prayer Bell", ["ghanta", "pooja"], `<path d="M9 3.5h6"/><path d="M12 3.5V7"/><path d="M8 13a4 4 0 0 1 8 0l1.5 6h-11L8 13Z"/><circle cx="12" cy="20" r="1.2" fill="currentColor" stroke="none"/>`),
+  R("home", "Incense Smoke", ["agarbatti", "calm"], `<path d="M9 21v-7M15 21v-7"/><path d="M9 14c-2.5-2 2-3 0-5.5S11 6 9 4M15 14c-2.5-2 2-3 0-5.5S17 6 15 4"/>`),
+  R("home", "Key Hook", ["keys", "hang"], `<path d="M4 5.5h16"/><circle cx="9" cy="5.5" r="1.4"/><path d="M9 7v4.5"/><path d="M9 9.5h2M15 7v4.5M15 9.5h2"/>`),
+  R("home", "Curtains", ["drapes", "window"], `<path d="M4 3.5h16"/><path d="M7 3.5V15l-3 4M17 3.5V15l3 4"/><path d="M7 12h2.5M14.5 12H17"/>`),
+
+  // ── FASHION & STYLE (24, new) ─────────────────────
+  R("fashion", "T-Shirt", ["tee", "wear"], `<path d="M9 4a3 3 0 0 0 6 0l4 3 2 3-3 2-1-1v9H7v-9l-1 1-3-2 2-3 4-3Z"/>`),
+  R("fashion", "Jeans", ["denim", "pants"], `<path d="M8 3h8l1 18h-4l-1-9-1 9H7L8 3Z"/><path d="M8 6h8"/>`),
+  R("fashion", "Summer Dress", ["dress", "frock"], `<path d="M9 3h6l-1 5 4 12H6l4-12-1-5Z"/><path d="M9 3v5M15 3v5"/>`),
+  R("fashion", "Denim Jacket", ["jacket", "coat"], `<path d="M8 4L5 7v13h14V7l-3-3a4 4 0 0 1-8 0Z"/><path d="M12 4v16"/>`),
+  R("fashion", "Baseball Cap", ["cap", "hat"], `<path d="M5 14a7 6 0 0 1 14 0H5Z"/><path d="M17 14h4v1.5h-6"/><path d="M12 8V5.5"/>`),
+  R("fashion", "Sneaker", ["shoes", "sport"], `<path d="M4 16V9l4 1 3 4h7a2 2 0 0 1 0 4H6l-2-2Z"/><path d="M8.5 13.5l1.8-2.8M11.5 13.5l1.8-2.8"/>`),
+  R("fashion", "Heels", ["shoes", "party"], `<path d="M4 17c4 0 6-2 8-6l3-7c2 3.5 3 7.5 3 13H4Z"/><path d="M15 17v3.5"/>`),
+  R("fashion", "Sunglasses", ["shades", "cool"], `<rect x="3" y="8" width="7" height="6" rx="3"/><rect x="14" y="8" width="7" height="6" rx="3"/><path d="M10 10.5h4M3 10L2 7M21 10l1-3"/>`),
+  R("fashion", "Wrist Watch", ["watch", "time"], `<circle cx="12" cy="12" r="5.5"/><path d="M12 9.5V12l2 1"/><path d="M9.5 3.5h5l-.7 3h-3.6l-.7-3ZM9.5 20.5h5l-.7-3h-3.6l-.7 3Z"/>`),
+  R("fashion", "Diamond Ring", ["ring", "gem"], `<path d="M7 3.5h10l3 4-8 5.5L4 7.5l3-4Z"/><path d="M4 12l-1 8.5h18L20 12"/><path d="M12 13v7.5"/>`),
+  R("fashion", "Lipstick", ["makeup", "glam"], `<path d="M10 2.5l3 1-1 5.5h-3L10 2.5Z"/><path d="M9 9h6v4H9z"/><path d="M9 13h6v7.5H9z"/>`),
+  R("fashion", "Perfume", ["scent", "luxury"], `<rect x="8" y="9" width="8" height="11.5" rx="2"/><path d="M10 9V7h4v2"/><path d="M11 7V4.5h2V7"/><path d="M12 13v4"/>`),
+  R("fashion", "Umbrella", ["rain", "monsoon"], `<path d="M4 13a8 8 0 0 1 16 0H4Z"/><path d="M12 5V3"/><path d="M12 13v7a2 2 0 0 0 4 0"/>`),
+  R("fashion", "Scarf", ["winter", "wrap"], `<path d="M8 3h8v6l-4 3-4-3V3Z"/><path d="M12 12v4M9.5 16l-1 4.5M14.5 16l1 4.5"/>`),
+  R("fashion", "Bow Tie", ["formal", "suit"], `<path d="M4 8.5l7 1.8v3.4l-7 1.8V8.5Z"/><path d="M20 8.5l-7 1.8v3.4l7 1.8V8.5Z"/><circle cx="12" cy="12" r="2"/>`),
+  R("fashion", "Party Hat", ["birthday", "fun"], `<path d="M12 2.5L19 18H5l7-15.5Z"/><circle cx="12" cy="2.5" r="1.5"/><circle cx="10.5" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="13.8" cy="13.5" r="1" fill="currentColor" stroke="none"/>`),
+  R("fashion", "Gloves", ["winter", "warm"], `<path d="M9 20.5v-7l-2-2V7a2 2 0 0 1 4-1v3.5M11 9.5V5a2 2 0 0 1 4 0v7l2 2v6.5H9v-1Z"/>`),
+  R("fashion", "Socks", ["feet", "cozy"], `<path d="M9 3v9l-4 5a2.5 2.5 0 0 0 4 3.2l5-3.2V3H9Z"/><path d="M9 6h5"/>`),
+  R("fashion", "Saree", ["indian", "ethnic"], `<path d="M9 3h6l1 7-2 10.5H9.5L8 10l1-7Z"/><path d="M6.5 8c3.5 2.5 8 2.5 11 0"/><path d="M10 14h4.5"/>`),
+  R("fashion", "Kurta", ["indian", "menswear"], `<path d="M8 3.5L5 6.5l2 3 1-1V20.5h8V8.5l1 1 2-3-3-3a4 3 0 0 1-8 0Z"/><path d="M12 6.5V11"/>`),
+  R("fashion", "Mojari", ["jutti", "ethnic"], `<rect x="4" y="15.5" width="16" height="3.5" rx="1.5"/><path d="M4 15.5c4 0 6-2 7-5l6-1.5 3 4"/>`),
+  R("fashion", "Bangles", ["kangan", "jewel"], `<circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/>`),
+  R("fashion", "Jhumka", ["earring", "gold"], `<circle cx="12" cy="4.5" r="1.5"/><path d="M12 6v3.5"/><path d="M8 16a4 4 0 0 1 8 0l1 3H7l1-3Z"/><circle cx="12" cy="14.5" r="1" fill="currentColor" stroke="none"/>`),
+  R("fashion", "Turban Pagri", ["pagdi", "royal"], `<path d="M5 13.5c0-5.5 3-9.5 7-9.5s7 4 7 9.5H5Z"/><path d="M5 13.5h14"/><circle cx="12" cy="9" r="1.6" fill="currentColor" stroke="none"/>`),
+
+  // ── TOOLS & BUILD (22, new) ───────────────────────
+  R("tools", "Hammer", ["hit", "build"], `<path d="M3.5 7.5L11 4l2 4.5L5.5 12 3.5 7.5Z"/><path d="M11.5 9L20 20"/>`),
+  R("tools", "Screwdriver", ["fix", "repair"], `<path d="M14 3.5l6.5 6.5-2 2-6.5-6.5 2-2Z"/><path d="M12 12L6 18"/><path d="M3 17l3-3 2.5 2.5L5.5 20 3 17.5Z"/>`),
+  R("tools", "Wrench", ["spanner", "fix"], `<circle cx="6.5" cy="6.5" r="4"/><circle cx="6.5" cy="6.5" r="1.5"/><path d="M9.5 9.5L20 20"/>`),
+  R("tools", "Hand Saw", ["cut", "wood"], `<path d="M3 14l13-6 4 1v5.5l-14 3.5-3-4Z"/><path d="M17 8l4-2.5V12l-3.5-.5"/>`),
+  R("tools", "Drill", ["hole", "power"], `<path d="M3.5 8h9.5v4.5H8l-1 4.5h-3.5V8Z"/><path d="M13 9.5h7"/><path d="M9 12.5V15"/>`),
+  R("tools", "Pliers", ["grip", "cut"], `<circle cx="12" cy="7.5" r="2"/><path d="M11 9.5L7 20M13 9.5l4 10.5"/><path d="M10.8 5.8L8 3M13.2 5.8L16 3"/>`),
+  R("tools", "Tape Measure", ["measure", "size"], `<rect x="3" y="9" width="12" height="9" rx="4"/><circle cx="9" cy="13.5" r="1.5"/><path d="M15 13.5h6"/><path d="M6 9V6.5h8V9"/>`),
+  R("tools", "Spirit Level", ["balance", "align"], `<rect x="3" y="9" width="18" height="6" rx="3"/><circle cx="12" cy="12" r="1.5"/><path d="M7 12h.1M17 12h.1" stroke-width="2.4"/>`),
+  R("tools", "Paint Roller", ["paint", "wall"], `<rect x="3.5" y="4" width="12.5" height="5" rx="2.5"/><path d="M16 6.5h3v5.5h-6"/><path d="M13 12v9"/>`),
+  R("tools", "Paint Bucket", ["paint", "color"], `<path d="M5 10h14l-1.5 10.5h-11L5 10Z"/><path d="M4 10a8 3.2 0 0 0 16 0"/><path d="M10 14v2.5M14 14v3.5"/>`),
+  R("tools", "Ladder", ["climb", "reach"], `<path d="M8 3v18M16 3v18"/><path d="M8 8h8M8 13h8M8 18h8"/>`),
+  R("tools", "Toolbox", ["kit", "tools"], `<rect x="3" y="9" width="18" height="11.5" rx="2"/><path d="M9 9V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 14h18"/><circle cx="12" cy="17.2" r="1.2" fill="currentColor" stroke="none"/>`),
+  R("tools", "Screw", ["fastener", "fix"], `<path d="M8 3.5h8"/><path d="M12 3.5V15"/><path d="M9 7.5l6 2M9 11.5l6 2M10 18.5l2 2 2-2"/>`),
+  R("tools", "Hard Hat", ["safety", "site"], `<path d="M5 14a7 7 0 0 1 14 0v1H5v-1Z"/><path d="M3 14h18v2.5H3z"/><path d="M12 7V4"/>`),
+  R("tools", "Brick Wall", ["build", "mason"], `<rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 10h18M3 14h18M9 6v4M15 6v4M6 10v4M12 10v4M18 10v4M9 14v4M15 14v4"/>`),
+  R("tools", "Gear", ["settings", "machine"], `<circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>`),
+  R("tools", "Allen Key", ["hex", "fix"], `<path d="M8 3v11a3 3 0 0 0 3 3h9"/>`),
+  R("tools", "Clamp", ["grip", "hold"], `<path d="M6 3.5V16a3 3 0 0 0 3 3h9"/><path d="M6 8h6M6 12h4"/><path d="M18 16.5V20"/>`),
+  R("tools", "Chisel", ["carve", "wood"], `<path d="M4 20l2.5-2.5L15 9l3 1-1 3-8.5 8.5L4 20Z"/><path d="M16 8l4.5-4.5"/>`),
+  R("tools", "Sander", ["smooth", "wood"], `<path d="M4 14h13v4.5H6L4 14Z"/><path d="M17 14v-3h-5"/><circle cx="8" cy="16.2" r="1" fill="currentColor" stroke="none"/>`),
+  R("tools", "Glue Gun", ["stick", "craft"], `<path d="M3.5 8h10.5v5H7l-1 4h-2.5V8Z"/><path d="M14 10h6"/><path d="M9 13v4"/>`),
+  R("tools", "Wheelbarrow", ["carry", "garden"], `<path d="M3 12.5h13l3-5"/><path d="M16 12.5l-2 5.5"/><circle cx="12" cy="19" r="2"/><path d="M6 12.5L4 10M19 7.5l2-2"/>`),
+
+  // ── MUSIC +14 (→32) ───────────────────────────────
+  R("music", "Dhol", ["punjabi", "drum", "bhangra"], `<ellipse cx="12" cy="13" rx="6" ry="8" transform="rotate(18 12 13)"/><path d="M8 6.5L6 4M16 19.5l2 2.5"/><path d="M7 10q5 3 10 0M7 16q5 3 10 0"/>`),
+  R("music", "Bansuri Flute", ["flute", "classical"], `<path d="M4 19L20 5"/><circle cx="8" cy="16" r="1.2" fill="currentColor" stroke="none"/><circle cx="11" cy="13.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="14" cy="11" r="1.2" fill="currentColor" stroke="none"/><circle cx="17" cy="8.5" r="1.2" fill="currentColor" stroke="none"/>`),
+  R("music", "Gramophone", ["vintage", "retro"], `<path d="M5 10h8l8-6v12l-8-2"/><path d="M9 14v6H7v-4"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/><path d="M17 4l3-1"/>`),
+  R("music", "Earbuds", ["pods", "listen"], `<circle cx="8" cy="9" r="3.5"/><circle cx="16" cy="9" r="3.5"/><path d="M8 12.5V17a4 4 0 0 0 8 0v-4.5"/>`),
+  R("music", "Cymbals", ["drums", "crash"], `<ellipse cx="12" cy="9" rx="8" ry="2.5"/><path d="M12 11.5V20"/><path d="M8 20.5h8"/>`),
+  R("music", "Harmonica", ["mouth-organ", "blues"], `<rect x="4" y="9" width="16" height="6" rx="3"/><path d="M8 9v6M12 9v6M16 9v6"/>`),
+  R("music", "Accordion", ["folk", "keys"], `<rect x="4" y="7" width="5" height="10" rx="1.5"/><rect x="15" y="7" width="5" height="10" rx="1.5"/><path d="M9 9l6 3-6 3 6 3"/>`),
+  R("music", "Stage Lights", ["concert", "show"], `<path d="M6 3v6M18 3v6"/><path d="M4 9h4l-1 5H5L4 9ZM20 9h-4l1 5h2l1-5Z"/><path d="M7 16l-2 4M17 16l2 4"/>`),
+  R("music", "Ektara", ["folk", "one-string"], `<circle cx="12" cy="16" r="5"/><path d="M12 11V3.5"/><circle cx="12" cy="3" r="1" fill="currentColor" stroke="none"/>`),
+  R("music", "Harmonium", ["keys", "bhajan"], `<rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 9v8M11 9v8M15 9v5"/><path d="M4 17l-1 3.5M20 17l1 3.5"/>`),
+  R("music", "Mridangam", ["carnatic", "drum"], `<path d="M5 9h14l-2 6H7l-2-6Z"/><ellipse cx="5" cy="9" rx="2" ry="3"/><ellipse cx="19" cy="9" rx="2" ry="3"/><circle cx="19" cy="9" r=".8" fill="currentColor" stroke="none"/>`),
+  R("music", "Ghungroo", ["dance", "bells"], `<path d="M6 8q6-4 12 0"/><circle cx="7" cy="11" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="17" cy="11" r="2"/>`),
+  R("music", "Entry Band", ["concert", "wrist"], `<path d="M5 10q7-4 14 0v4q-7 4-14 0v-4Z"/><path d="M9 8.5V6M15 8.5V6"/>`),
+  R("music", "Lyrics Sheet", ["song", "words"], `<path d="M6 3.5h12V20.5H6V3.5Z"/><path d="M9 8h6M9 11h6M9 14h4"/><circle cx="16" cy="17" r="2" fill="currentColor" stroke="none"/>`),
+
+  // ── NATURE +14 (→30) ──────────────────────────────
+  R("nature", "Palm Tree", ["tropical", "beach"], `<path d="M11 21v-9"/><path d="M11 12C7 10 5 7 5 4c4 0 7 1 8 4 1-3 4-4 8-4 0 3-2 6-6 8"/><path d="M11 12c-1 2-1 4 0 6"/>`),
+  R("nature", "Sunflower", ["flower", "sun"], `<circle cx="12" cy="10" r="3"/><ellipse cx="12" cy="5" rx="2" ry="3"/><ellipse cx="12" cy="15" rx="2" ry="3"/><ellipse cx="7" cy="10" rx="3" ry="2"/><ellipse cx="17" cy="10" rx="3" ry="2"/><path d="M12 15v5.5"/>`),
+  R("nature", "Rose", ["love", "flower"], `<circle cx="12" cy="8" r="4"/><path d="M12 4.5c-1.5 1-1.5 2.5 0 3.5 1.5-1 1.5-2.5 0-3.5Z"/><path d="M12 12v9"/><path d="M12 16l-3-1M12 18l3-1"/>`),
+  R("nature", "Pinecone", ["forest", "seed"], `<ellipse cx="12" cy="13" rx="5" ry="7"/><path d="M8 10q4 3 8 0M8 14q4 3 8 0M9 18q3 2 6 0"/><path d="M12 6V3.5"/>`),
+  R("nature", "Bird Nest", ["home", "eggs"], `<path d="M4 14q8 8 16 0l-1 3H5l-1-3Z"/><ellipse cx="10" cy="12.5" rx="2.5" ry="2" fill="#FFFDF5"/><ellipse cx="14.5" cy="12" rx="2.5" ry="2" fill="#FFFDF5"/>`),
+  R("nature", "Volcano", ["lava", "mountain"], `<path d="M7 20L10 9h4l3 11H7Z"/><path d="M10 9c-1-2 1-3 0-5 2 1 1 3 3 4-1 1-2 1-3 1Z" fill="currentColor" stroke="none"/><path d="M5 20.5h14"/>`),
+  R("nature", "Island", ["beach", "sea"], `<path d="M4 18q8-3 16 0"/><path d="M9 15a4 4 0 0 1 8 0H9Z"/><path d="M13 11V7"/><path d="M13 7c-2-1-3-1-5 0 1-2 3-2 5 0Z"/>`),
+  R("nature", "Waterfall", ["falls", "river"], `<path d="M6 3.5h12"/><path d="M7 3.5V14l-2 6M12 3.5V16l-1 4M17 3.5V14l2 6"/><path d="M4 20.5h16"/>`),
+  R("nature", "Bonsai", ["zen", "tree"], `<path d="M7 15h10l-1 5H8l-1-5Z"/><path d="M12 15V8"/><circle cx="9" cy="6" r="3"/><circle cx="14" cy="5" r="3.5"/>`),
+  R("nature", "Lotus", ["peace", "india"], `<path d="M12 5c-2 3-2 6 0 8 2-2 2-5 0-8Z"/><path d="M5 9c2 0 5 1 7 3-2 0-5-1-7-3ZM19 9c-2 0-5 1-7 3 2 0 5-1 7-3Z"/><path d="M4 15q8 5 16 0"/><path d="M12 13v3"/>`),
+  R("nature", "Marigold Garland", ["toran", "festival"], `<path d="M4 6q8 6 16 0"/><circle cx="7" cy="9.5" r="2.5" fill="#FF8A5C"/><circle cx="12" cy="11" r="2.5" fill="#FF8A5C"/><circle cx="17" cy="9.5" r="2.5" fill="#FF8A5C"/><circle cx="12" cy="11" r=".9" fill="currentColor" stroke="none"/>`),
+  R("nature", "Coconut", ["tender", "tropical"], `<circle cx="12" cy="13" r="7"/><circle cx="12" cy="6" r="2"/><path d="M10 6h4"/><path d="M9 12q1.5 2.5 4 3"/>`),
+  R("nature", "Succulent", ["plant", "pot"], `<path d="M8 14h8l-1 6H9l-1-6Z"/><path d="M12 14V9"/><path d="M12 11C10 9 9 7 9 5c3 0 4 2 3 4 1-2 4-3 4-1 0 3-2 4-4 3Z"/>`),
+  R("nature", "Firefly Jar", ["glow", "night"], `<path d="M8 8h8v12H8z"/><path d="M7 8a5 2.5 0 0 1 10 0H7Z"/><circle cx="11" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="14" cy="15.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="10" cy="17" r="1.2" fill="currentColor" stroke="none"/>`),
+
+  // ── FOOD +14 (→36) ────────────────────────────────
+  R("food", "Biryani Handi", ["biryani", "pot"], `<path d="M6 12h12l-1.5 8h-9L6 12Z"/><path d="M5 12a7 3 0 0 0 14 0"/><path d="M9 8.5c0-1.5 1.5-1.5 1.5-3M13 8.5c0-1.5 1.5-1.5 1.5-3"/>`),
+  R("food", "Jalebi", ["sweet", "mithai"], `<path d="M12 5a2.5 2.5 0 1 1-2.5 2.5A2.5 2.5 0 1 1 12 10a2.5 2.5 0 1 1-2.5 2.5A2.5 2.5 0 1 1 12 15a2.5 2.5 0 1 1-1.5 4.5"/><path d="M7 19.5h10"/>`),
+  R("food", "Chocolate Bar", ["candy", "sweet"], `<rect x="7" y="3" width="10" height="18" rx="2"/><path d="M7 9h10M7 15h10M12 3v18"/>`),
+  R("food", "Lollipop", ["candy", "sweet"], `<circle cx="12" cy="9" r="5.5"/><path d="M12 4.5a4.5 4.5 0 0 1 0 9 3 3 0 0 1 0-6 1.5 1.5 0 0 1 0 3"/><path d="M12 14.5V21"/>`),
+  R("food", "Honey Jar", ["honey", "sweet"], `<path d="M8 9h8v11H8z"/><path d="M7 9a5 2.5 0 0 1 10 0H7Z"/><path d="M12 13v4"/><path d="M9 6.5h6"/>`),
+  R("food", "Bread Loaf", ["bakery", "toast"], `<path d="M4 12a4 4 0 0 1 4-4h8a4 4 0 0 1 0 8H8a4 4 0 0 1-4-4Z"/><path d="M9 9.5v.1M12 9.5v.1M15 9.5v.1" stroke-width="2.2"/>`),
+  R("food", "Pretzel", ["snack", "twist"], `<path d="M9 8C6 5 3.5 7 4.5 10c1 2.5 4 2 4.5 4.5L12 17l3.5-2.5c.5-2.5 3.5-2 4.5-4.5 1-3-1.5-5-4.5-2"/><circle cx="9" cy="17" r="1.2"/><circle cx="15" cy="17" r="1.2"/>`),
+  R("food", "Cotton Candy", ["fair", "sweet"], `<path d="M7 4h10v6a5 5 0 0 1-10 0V4Z"/><path d="M12 15v5.5"/><path d="M9 7h6"/>`),
+  R("food", "Masala Dabba", ["spices", "indian"], `<circle cx="12" cy="13" r="8"/><circle cx="12" cy="13" r="2.5"/><circle cx="12" cy="7.5" r="1.5"/><circle cx="7" cy="12" r="1.5"/><circle cx="17" cy="12" r="1.5"/><circle cx="9.5" cy="17.5" r="1.5"/><circle cx="14.5" cy="17.5" r="1.5"/>`),
+  R("food", "Davara Coffee", ["filter", "kaapi"], `<path d="M7 8h7v5a4 4 0 0 1-8 0V8Z"/><path d="M14 9.5h1a2 2 0 0 1 0 4h-1"/><path d="M5 17h14l-1.5 3.5h-11L5 17Z"/>`),
+  R("food", "Thali", ["meals", "plate"], `<ellipse cx="12" cy="14" rx="9" ry="5.5"/><circle cx="8.5" cy="13" r="2"/><circle cx="15.5" cy="13" r="2"/><circle cx="12" cy="15.5" r="2"/>`),
+  R("food", "Kulhad", ["chai", "clay"], `<path d="M8 9h8l-1 10H9L8 9Z"/><path d="M7 9a5 2 0 0 1 10 0H7Z"/><path d="M12 12.5v3"/>`),
+  R("food", "Paan Leaf", ["betel", "mouth"], `<path d="M12 3C7 8 6 14 12 21c6-7 5-13 0-18Z"/><path d="M12 3v18"/><path d="M12 9l-3-1M12 9l3-1M12 13l-3.5-1M12 13l3.5-1"/>`),
+  R("food", "Chaas Glass", ["buttermilk", "cool"], `<path d="M8 8h8l-1 12H9L8 8Z"/><path d="M7 8a5 2 0 0 1 10 0H7Z"/><path d="M10 12.5h4"/><circle cx="16" cy="5" r="1" fill="currentColor" stroke="none"/>`),
+
+  // ── SPORTS +10 (→30) ──────────────────────────────
+  R("sports", "Rugby Ball", ["rugby", "oval"], `<ellipse cx="12" cy="12" rx="9" ry="6" transform="rotate(-25 12 12)"/><path d="M9 11l6-2M8.5 14.5l6-2"/>`),
+  R("sports", "Golf Set", ["golf", "club"], `<circle cx="17" cy="17" r="3"/><path d="M15 15L7 5"/><path d="M7 5H4v3"/>`),
+  R("sports", "Hockey Stick", ["hockey", "stick"], `<path d="M15 3l-6 12"/><path d="M9 15l-5 2v3h8l3-5"/>`),
+  R("sports", "Swim Goggles", ["swim", "pool"], `<path d="M3 12h4a3 3 0 0 1 6 0h8"/><circle cx="7" cy="12" r="2.5"/><circle cx="17" cy="12" r="2.5"/><path d="M4.5 12H3M21 12h-1.5"/>`),
+  R("sports", "Finish Line", ["race", "win"], `<path d="M6 3v18M18 3v18"/><path d="M6 5h12v5H6z"/><path d="M8 5v5M11 5v5M14 5v5" stroke-width="1.6"/><path d="M6 15h12"/>`),
+  R("sports", "Scoreboard", ["score", "match"], `<rect x="3" y="6" width="18" height="10" rx="2"/><path d="M12 6v10"/><path d="M6.5 10.5h2M6.5 13.5h2M15.5 10.5h2M15.5 13.5h2"/><path d="M8 19h8"/>`),
+  R("sports", "Kho-Kho Chase", ["tag", "india"], `<circle cx="7" cy="8" r="2.5"/><path d="M7 10.5V16M7 13l-3 2M7 13l3 2M7 16l-2 4.5M7 16l2 4.5"/><path d="M14 6l6 6-2 2"/><path d="M16 16l4 4"/>`),
+  R("sports", "Kabaddi Court", ["mat", "raid"], `<rect x="3" y="7" width="18" height="10" rx="1"/><path d="M12 7v10"/><path d="M3 10.5h18M3 13.5h6M15 13.5h6"/>`),
+  R("sports", "Carrom Board", ["carrom", "indoor"], `<rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="8" cy="8" r="1.5"/><circle cx="16" cy="8" r="1.5"/><circle cx="8" cy="16" r="1.5"/><circle cx="16" cy="16" r="1.5"/><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/>`),
+  R("sports", "Chess Timer", ["clock", "blitz"], `<rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="14" r="3"/><circle cx="15" cy="14" r="3"/><path d="M9 14l1.5-1.5M15 14v-2"/><path d="M8 8V5.5h8V8M9 5.5L7 3.5M15 5.5l2-2"/>`),
+
+  // ── TRAVEL +10 (→28) ──────────────────────────────
+  R("travel", "Cruise Ship", ["cruise", "sea"], `<path d="M3 15h18l-2.5 5h-13L3 15Z"/><path d="M6 15v-4h12v4"/><path d="M9 11V8h6v3"/><path d="M12 8V5.5"/>`),
+  R("travel", "Auto Rickshaw", ["tuk-tuk", "india"], `<path d="M3 14l2-6h9l3 6H3Z"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/><path d="M17 14l3-1 1 3h-4"/><path d="M5 8V5.5h7V8"/>`),
+  R("travel", "Cable Car", ["ropeway", "hills"], `<path d="M2.5 5h19"/><path d="M12 5V8"/><rect x="7" y="8" width="10" height="8" rx="2"/><path d="M7 12h10"/><circle cx="9.5" cy="18.5" r="1"/><circle cx="14.5" cy="18.5" r="1"/>`),
+  R("travel", "Houseboat", ["kerala", "lake"], `<path d="M3 14h18l-3 6H6l-3-6Z"/><path d="M7 14V9h10v5"/><path d="M5 9q7-5 14 0"/>`),
+  R("travel", "Safari Jeep", ["safari", "wild"], `<path d="M3 15V9h9l3 6H3Z"/><path d="M15 12h3l3 3v3h-6"/><circle cx="7.5" cy="18.5" r="1.8"/><circle cx="17" cy="18.5" r="1.8"/><path d="M6 9V6h6v3"/>`),
+  R("travel", "Duffel Bag", ["gym", "trip"], `<rect x="3" y="10" width="18" height="9" rx="4.5"/><path d="M9 10V8a3 3 0 0 1 6 0v2"/><path d="M12 10v9"/>`),
+  R("travel", "Metro Card", ["metro", "pass"], `<rect x="3" y="7" width="18" height="11" rx="2"/><circle cx="8" cy="12.5" r="2.5"/><path d="M12.5 10.5h5M12.5 14.5h5"/>`),
+  R("travel", "Visa Stamp", ["visa", "passport"], `<rect x="4" y="6" width="16" height="13" rx="2" transform="rotate(-8 12 12)"/><path d="M8 11.5l2.5 2.5 4.5-5"/>`),
+  R("travel", "Fridge Magnet", ["souvenir", "gift"], `<rect x="7" y="9" width="10" height="9" rx="1.5"/><circle cx="12" cy="13" r="2"/><path d="M12 9V6.5"/><circle cx="12" cy="5.5" r="1.5"/>`),
+  R("travel", "Desert Safari", ["dunes", "desert"], `<path d="M3 18q5-6 9 0t10 0"/><circle cx="17" cy="7" r="3.5"/><path d="M8 14l4-6 4 6H8Z"/>`),
+
+  // ── WEB3 +10 (→30) ────────────────────────────────
+  R("web3", "Seed Phrase", ["wallet", "backup"], `<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h4M8 12h8M8 15h5"/><path d="M15 9l3 1-3 1"/>`),
+  R("web3", "Server Rack", ["node", "mining"], `<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M5 9h14M5 15h14"/><circle cx="8" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="18" r="1" fill="currentColor" stroke="none"/>`),
+  R("web3", "Stake Lock", ["staking", "yield"], `<circle cx="12" cy="10" r="5"/><path d="M12 7.5V10l1.8 1.2"/><rect x="8" y="14" width="8" height="6.5" rx="2"/><path d="M10.5 14v-1.5a1.5 1.5 0 0 1 3 0V14"/>`),
+  R("web3", "Meme Coin", ["meme", "fun"], `<circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="10.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="10.5" r="1.2" fill="currentColor" stroke="none"/><path d="M8.5 14.5q1-1.5 3.5-1.5t3.5 1.5"/><path d="M7 7l-2-2M17 7l2-2"/>`),
+  R("web3", "Fuel Gauge", ["gas", "fees"], `<path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4.5-4.5"/><circle cx="12" cy="16" r="1.4" fill="currentColor" stroke="none"/><path d="M18 12h2.5v4H18"/>`),
+  R("web3", "Block Explorer", ["search", "chain"], `<rect x="3" y="7" width="10" height="10" rx="2"/><path d="M3 12h10M8 7v10"/><circle cx="17" cy="17" r="3.5"/><path d="M19.5 19.5L21 21"/>`),
+  R("web3", "Faucet Drip", ["testnet", "drops"], `<path d="M6 4h12"/><path d="M9 4v5h6V4"/><path d="M12 9v4"/><path d="M12 15.5s3.5 4 3.5 6.5a3.5 3.5 0 0 1-7 0c0-2.5 3.5-6.5 3.5-6.5Z"/>`),
+  R("web3", "Planet Chain", ["orbit", "network"], `<circle cx="12" cy="12" r="4.5"/><ellipse cx="12" cy="12" rx="9.5" ry="3.5" transform="rotate(-18 12 12)"/><circle cx="5" cy="16" r="1.4"/><circle cx="19" cy="8" r="1.4"/>`),
+  R("web3", "Scroll Coin", ["rollup", "doc"], `<path d="M6 4h11a3 3 0 0 1 3 3v13H9a3 3 0 0 1-3-3V4Z"/><circle cx="13" cy="12" r="3"/><path d="M13 10.5v3M11.5 12h3"/>`),
+  R("web3", "Node Check", ["validator", "online"], `<circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v2M12 18.5v2M3.5 12h2M18.5 12h2"/><path d="M10.5 12l1.2 1.2 2-2.2"/>`),
+
+  // ── AI +6 (→26) ───────────────────────────────────
+  R("ai", "AI Avatar", ["agent", "face"], `<circle cx="12" cy="12" r="8.5"/><path d="M9 10.5h.1M15 10.5h.1" stroke-width="2.6"/><path d="M9 14.5q3 2.5 6 0"/><path d="M17 3.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8Z" fill="currentColor" stroke="none"/>`),
+  R("ai", "Diffusion Grid", ["generate", "pixels"], `<circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/>`),
+  R("ai", "Echo Rings", ["voice", "sound"], `<circle cx="12" cy="12" r="2"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="9"/>`),
+  R("ai", "Token Window", ["context", "chat"], `<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M7 9.5h8M7 12.5h5"/><circle cx="17" cy="16" r="3"/><path d="M17 14.5v3M15.5 16h3"/>`),
+  R("ai", "Prompt Chain", ["link", "flow"], `<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 12h7"/><path d="M13 7l.8 2 2.2.8-2.2.8-.8 2-.8-2-2.2-.8 2.2-.8.8-2Z" fill="currentColor" stroke="none"/>`),
+  R("ai", "Smart Glasses", ["wearable", "ar"], `<path d="M2.5 9h7a2 2 0 0 1 2 2v2.5a1.5 1.5 0 0 1-3 0V13h-1v.5a1.5 1.5 0 0 1-3 0V11a2 2 0 0 1-1.5-2Z"/><path d="M21.5 9h-7a2 2 0 0 0-2 2v2.5a1.5 1.5 0 0 0 3 0V13h1v.5a1.5 1.5 0 0 0 3 0V11a2 2 0 0 0 1.5-2Z"/><path d="M11.5 12.5h1"/>`),
+
+  // ── SHOP +10 (→30) ────────────────────────────────
+  R("shop", "Heart Tag", ["wishlist", "love"], `<path d="M4 5h7l9 8-7 7-9-9V5Z"/><path d="M9 13c-2-2-2-4.5 0-5.5 1.5-.8 3 0 3.5 1.5.5-1.5 2-2.3 3.5-1.5 2 1 2 3.5 0 5.5L12.5 16 9 13Z"/>`),
+  R("shop", "Coupon Cut", ["voucher", "cut"], `<path d="M5 8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a2 2 0 0 0 0 6v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1a2 2 0 0 0 0-6V8Z"/><circle cx="8.5" cy="8.5" r="1.5"/><circle cx="8.5" cy="15.5" r="1.5"/><path d="M4 3l4 4M4 7V3h4"/>`),
+  R("shop", "Flash Sale", ["deal", "fast"], `<path d="M4 5h7l9 8-7 7-9-9V5Z"/><path d="M13 8l-3.5 4.5H12l-1 3.5L14.5 11H12l1-3Z" fill="currentColor" stroke="none"/>`),
+  R("shop", "Star Parcel", ["shipping", "free"], `<path d="M3.5 8L12 4l8.5 4v8L12 20l-8.5-4v-8Z"/><path d="M12 8.5l1 2 2.2.3-1.6 1.6.4 2.2-2-1-2 1 .4-2.2-1.6-1.6 2.2-.3 1-2Z" fill="currentColor" stroke="none"/>`),
+  R("shop", "Cash on Delivery", ["cod", "pay"], `<path d="M3 9l5-1 3 5-5 1-3-5Z"/><rect x="11" y="7" width="10" height="7" rx="1.5"/><circle cx="16" cy="10.5" r="1.8"/>`),
+  R("shop", "Aisle Sign", ["store", "find"], `<path d="M12 3v4"/><rect x="5" y="7" width="14" height="9" rx="1.5"/><path d="M9 11h6M9 13.5h4"/><path d="M8 19.5h8"/>`),
+  R("shop", "Size Chart", ["fit", "measure"], `<path d="M4 18L18 4"/><path d="M7 17.5l1.5-1.5M10.5 14l1.5-1.5M14 10.5l1.5-1.5"/><circle cx="18" cy="18" r="2.5"/>`),
+  R("shop", "Ribbon Bow", ["wrap", "gift"], `<circle cx="12" cy="12" r="2"/><path d="M10 11C7 8 4 8 3.5 10.5 3 13 6 14 10 13M14 11c3-3 6-3 6.5-.5.5 2.5-2.5 3.5-6.5 2.5"/><path d="M10 14l-2 6M14 14l2 6"/>`),
+  R("shop", "Swap Tags", ["exchange", "return"], `<path d="M4 7h7l2 2-2 2H4V7Z"/><path d="M20 17h-7l-2-2 2-2h7v4Z"/><path d="M8 4v3M16 17v3"/>`),
+  R("shop", "Crown Member", ["loyalty", "vip"], `<path d="M5 16l-1.5-8L9 11l3-6 3 6 5.5-3L19 16H5Z"/><path d="M5 18.5h14"/>`),
+
+  // ── ARROWS +6 (→26) ───────────────────────────────
+  R("arrows", "Trend Arrow", ["growth", "up"], `<path d="M3.5 20.5h17"/><path d="M5 16l4.5-5 3 3L18 8"/><path d="M15 8h3v3"/>`),
+  R("arrows", "Logout", ["exit", "leave"], `<path d="M9 4H5v16h4"/><path d="M10 12h10"/><path d="M16.5 8.5L20 12l-3.5 3.5"/>`),
+  R("arrows", "Login", ["enter", "join"], `<path d="M15 4h4v16h-4"/><path d="M4 12h10"/><path d="M10.5 8.5L14 12l-3.5 3.5"/>`),
+  R("arrows", "Collapse Folds", ["fold", "close"], `<path d="M4 6h16M4 12h16M4 18h16"/><path d="M9 6l-2 3 2 3M15 15l2 3-2 3"/>`),
+  R("arrows", "Drag Grip", ["move", "handle"], `<circle cx="9" cy="7" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="7" r="1.4" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="9" cy="17" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="1.4" fill="currentColor" stroke="none"/>`),
+  R("arrows", "Resize Corner", ["scale", "drag"], `<path d="M4 4h6v6"/><path d="M20 20h-6v-6"/><path d="M4 4l7 7M20 20l-7-7"/>`),
+
+  // ── WEBSITES +6 (→26) ─────────────────────────────
+  R("websites", "Wireframe", ["layout", "draft"], `<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M6 12h6v5H6zM15 12h3M15 14.5h3"/>`),
+  R("websites", "Theme Toggle", ["dark-mode", "switch"], `<rect x="3" y="8" width="18" height="9" rx="4.5"/><circle cx="8" cy="12.5" r="2.5"/><path d="M15 10.5a2.5 2.5 0 0 0 0 4 3 3 0 0 1 0-4Z" fill="currentColor" stroke="none"/>`),
+  R("websites", "Support Chat", ["help", "headset"], `<path d="M4 5.5h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-7l-4 3.5v-3.5H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z"/><path d="M9 10h6M9 12.5h4"/>`),
+  R("websites", "Pricing Table", ["plans", "price"], `<path d="M5 4h4v16H5zM10 4h4v16h-4ZM15 4h4v16h-4Z"/><path d="M6.5 7h1M11.5 7h1M16.5 7h1"/>`),
+  R("websites", "Faq Accordion", ["help", "list"], `<rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="12" width="18" height="6" rx="2"/><path d="M16 6.5v3M14.5 8h3M16 14.5v3M14.5 16h3"/>`),
+  R("websites", "Footer Blocks", ["bottom", "links"], `<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15h18"/><path d="M6 7.5h3M6 10.5h3M11 7.5h3M11 10.5h3M16 7.5h2"/>`),
+
+  // ── SOCIAL +6 (→24) ───────────────────────────────
+  R("social", "Story Ring", ["story", "status"], `<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/><path d="M18.5 3.5h2v2"/>`),
+  R("social", "Film Reel", ["reels", "video"], `<circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="9.5" r="1.6"/><circle cx="15" cy="9.5" r="1.6"/><circle cx="9" cy="14.5" r="1.6"/><circle cx="15" cy="14.5" r="1.6"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/>`),
+  R("social", "QR Code", ["scan", "share"], `<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M14 14h6v6h-6zM16 14v6M14 16h6"/>`),
+  R("social", "Bio Link", ["profile", "url"], `<circle cx="12" cy="12" r="4"/><path d="M12 8V3.5M8 12H3.5M12 16v4.5M16 12h4.5"/><circle cx="12" cy="3.5" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="12" cy="20.5" r="1"/><circle cx="20.5" cy="12" r="1"/>`),
+  R("social", "Poke Hand", ["poke", "nudge"], `<path d="M7 12V6a1.5 1.5 0 0 1 3 0v5M10 11V4.5a1.5 1.5 0 0 1 3 0V11M13 11V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L2.5 14a1.6 1.6 0 0 1 2.6-1.8L7 14.5"/>`),
+  R("social", "Streak Loop", ["streak", "daily"], `<path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M18 12v4h-4"/><circle cx="12" cy="19" r="1.6"/><path d="M6 8L4 6M6 8L4 10"/>`),
+
+  // ── BANK +4 (→22) ─────────────────────────────────
+  R("bank", "Growth Coin", ["invest", "grow"], `<circle cx="12" cy="13" r="7"/><path d="M12 10v6M10 11.5h4"/><path d="M12 6V3.5M9 4.5c0-2 6-2 6 0"/><path d="M15.5 8.5l2-2"/>`),
+  R("bank", "Mortgage", ["home-loan", "house"], `<path d="M3 11l9-6 9 6"/><path d="M6 9.5V19h12V9.5"/><circle cx="12" cy="14" r="2"/><path d="M10 19v-2.5h4V19"/>`),
+  R("bank", "Deposit Lock", ["fd", "secure"], `<circle cx="12" cy="9" r="5.5"/><path d="M9.5 9h5"/><rect x="7.5" y="13.5" width="9" height="7" rx="2"/><path d="M10.5 13.5v-1a1.5 1.5 0 0 1 3 0v1"/>`),
+  R("bank", "Passbook", ["account", "ledger"], `<path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.7A1.7 1.7 0 0 0 5 19.7V4.5Z"/><path d="M5 19.5A1.5 1.5 0 0 1 6.5 18H19"/><path d="M9 8h6M9 11h4"/>`),
+
+  // ── LMS +4 (→22) ──────────────────────────────────
+  R("lms", "Live Class", ["webinar", "stream"], `<rect x="3" y="4" width="18" height="13" rx="2"/><circle cx="7" cy="8" r="1.6" fill="currentColor" stroke="none"/><path d="M11 8h7M7 12h7"/><path d="M16 20.5h5"/>`),
+  R("lms", "Assignment", ["homework", "task"], `<path d="M6 3.5h12V20.5H6V3.5Z"/><path d="M9 8h6"/><path d="M9 12l1.2 1.2L13 10.5"/><path d="M9 16h6"/>`),
+  R("lms", "Report Card", ["grades", "marksheet"], `<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7.5h8"/><path d="M8 11h3M8 14h5"/><circle cx="16" cy="16.5" r="2.5"/><path d="M16 15v3M14.5 16.5h3"/>`),
+  R("lms", "Star Student", ["topper", "award"], `<path d="M6 20.5h12"/><path d="M8 20.5v-4l4-1 4 1v4"/><path d="M12 3l1.4 2.9 3.1.4-2.3 2.2.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.2 3.1-.4L12 3Z"/>`),
+
+  // ── BLOG +4 (→22) ─────────────────────────────────
+  R("blog", "Post Series", ["collection", "stack"], `<rect x="6" y="6" width="12" height="14" rx="2"/><path d="M6 6V4.5A1.5 1.5 0 0 1 7.5 3h11A1.5 1.5 0 0 1 20 4.5V18"/><path d="M9.5 10.5h5M9.5 13.5h5"/>`),
+  R("blog", "Podcast Post", ["audio", "episode"], `<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M8 9.5v5M11 8v8M14 9.5v5M17 11v2"/>`),
+  R("blog", "Paywall", ["premium", "lock"], `<rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M7 9h6M7 12h4"/><rect x="14" y="11" width="6" height="6" rx="1.5"/><path d="M15.5 11v-1a1.5 1.5 0 0 1 3 0v1"/>`),
+  R("blog", "Comments Off", ["mute", "quiet"], `<path d="M4 5.5h13a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9l-5 4v-11a1 1 0 0 1 1-1Z"/><path d="M8 9.5h5M8 12h3"/><path d="M16 16l5 5M21 16l-5 5"/>`),
+
+  // ── NEWS +4 (→22) ─────────────────────────────────
+  R("news", "E-Paper", ["digital", "tablet"], `<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M9 6.5h6M9 9.5h6M9 12.5h4"/><path d="M11 18.5h2"/>`),
+  R("news", "News Ticker", ["crawl", "breaking"], `<rect x="3" y="8" width="18" height="8" rx="2"/><path d="M3 12h18"/><path d="M6.5 10h.1M10 10h.1M13.5 10h.1M7 14h10" stroke-width="2"/>`),
+  R("news", "Press Mics", ["conference", "media"], `<circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M8 10v4M16 10v4M5 20.5h14"/><path d="M8 14h8"/>`),
+  R("news", "Front Page", ["headline", "star"], `<path d="M6 3.5h12V20.5H6V3.5Z"/><path d="M9 7.5h6"/><path d="M12 10.5l1 2 2.2.3-1.6 1.6.4 2.2-2-1-2 1 .4-2.2-1.6-1.6 2.2-.3 1-2Z" fill="currentColor" stroke="none"/>`),
+
+  // ── HOSPITAL +4 (→22) ─────────────────────────────
+  R("hospital", "Syrup Bottle", ["medicine", "dose"], `<path d="M9 8h6v12H9z"/><path d="M10 8V6h4v2"/><path d="M8 8a7 3 0 0 1 8 0"/><path d="M12 12v5"/>`),
+  R("hospital", "Rib Scan", ["xray", "chest"], `<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M12 6v12"/><path d="M8.5 8q3.5 1.5 0 3M15.5 8q-3.5 1.5 0 3M8.5 12q3.5 1.5 0 3M15.5 12q-3.5 1.5 0 3M8.5 16q3.5 1.5 0 3M15.5 16q-3.5 1.5 0 3"/>`),
+  R("hospital", "Donor Drop", ["donate", "blood"], `<path d="M9 8l-4 1 1 4"/><path d="M12 5.5s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9Z"/><path d="M10 14a2.5 2.5 0 0 0 2 2.5"/>`),
+  R("hospital", "Surgeon Cap", ["ot", "surgery"], `<path d="M5 14a7 6 0 0 1 14 0v1.5H5V14Z"/><path d="M5 15.5h14"/><path d="M9 18.5h6"/>`),
+
+  // ── CLINIC +4 (→22) ───────────────────────────────
+  R("clinic", "Vaccine Card", ["shot", "record"], `<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M6.5 10.5h6M6.5 13.5h4"/><path d="M15 9.5l4-3M17.5 10.5l1-1"/><path d="M15 9.5l-1 3 3 1"/>`),
+  R("clinic", "Eye Chart", ["vision", "test"], `<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M10 10.5h4M11 14h2M12 17.5v.1" stroke-width="2.4"/>`),
+  R("clinic", "Height Chart", ["growth", "measure"], `<path d="M6 3v18"/><path d="M6 5h3M6 9h4M6 13h3M6 17h4"/><circle cx="15" cy="8" r="2.5"/><path d="M15 10.5V17"/>`),
+  R("clinic", "Token Display", ["queue", "number"], `<rect x="3" y="5" width="18" height="11" rx="2"/><path d="M8 8.5V14M6 10.5h4"/><path d="M14 8.5a2 2 0 1 1 0 5.5"/><path d="M6 19h12"/>`),
+];
